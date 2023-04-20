@@ -14,7 +14,7 @@ node
 > web3.eth.getBalance('0x70e1daD0a883A98b2a686092CB0fe204C7498c52').then(function(res) {console.log(web3.utils.fromWei(res, "ether"));})
 > web3.eth.sendTransaction({from: '0x70e1daD0a883A98b2a686092CB0fe204C7498c52', to : '0x427054DFF2ECB3456e9C651B7180A431cF710eE6', value: web3.utils.toWei("5", "ether")});
 ```  
-_Les addresses renseignées sont des adresses fictives issues de [Ganache](https://trufflesuite.com/ganache/)._  
+_Les adresses renseignées sont des adresses fictives issues de [Ganache](https://trufflesuite.com/ganache/)._  
 
 ## En détail
 | Commande  | Description  |  
