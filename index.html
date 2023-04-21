@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/web3.js-browser/build/web3.min.js"></script>
+</head>
+<body>
+    <div id="accounts">
+
+    </div>
+    <div id="divNumber">
+
+    </div>
+    <script>
+        let accounts = document.getElementById('accounts');
+        let divNumber = document.getElementById('divNumber');
+
+        // fonction d'initialisation : appel au smart contrat + gestion du contenu de la page
+        const init = async() => {
+            let web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:7545')); // connexion à Ganache
+            web3.eth.getAccounts().then(function(allAccounts) {
+                for(let i = 0; i < allAccounts.length ; i++) {
+                    // affichage dans la DIV accounts de toutes les adresses fournies par Ganache
+                    accounts.innerHTML += allAccounts[i] + '<br />';
+                }
+            });
+
+            // création d'une instance de Contract
+            let contract = new web3.eth.Contract([
+                    {
+                        "inputs": [],
+                        "name": "myNumber",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function",
+                        "constant": true,
+                        "signature": "0x23fd0e40"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "_autreNumber",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "setNumber",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function",
+                        "signature": "0x3fb5c1cb"
+                    }
+                ],"0x695A264F0627E29cb9d4Cb1EbfbD3A48FC8903AD");
+
+            // fonction asynchrone qui permet d'interroger le smart contract
+            async function getNumber() {
+                const myNumberARecup = await contract.methods.myNumber().call()
+                    .then(receipt => {
+                        // affichage du numéro récupéré depuis le smart contract
+                        divNumber.innerHTML = "Le numéro dans le smart contract est le : <b>"+receipt+"</b>";
+                    }).catch(error => {
+                        // gestion des erreurs
+                        alert('KO');
+                    });
+            }
+
+            getNumber(); // ne pas oublier d'appeler la fonction ...
+        }
+
+        init();
+    </script>
+</body>
+</html>

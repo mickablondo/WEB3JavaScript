@@ -85,6 +85,15 @@ contract.methods.setNumber(1234).send({from:'0x842159E7b7a0129bCda9748218fDE06ef
 | _contract.methods.myNumber().call()_  | appelle ma fonction _myNumber_ qui représente un getter d'un uint  |
 | _contract.methods.setNumber(1234).send({from:'...'})_  |  appelle ma fonction _setNumber_ en spécifiant l'adresse de celui qui modifie la valeur |
   
+## Interaction avec un smart contract depuis une page HTML
+
+ - Création du fichier _index.html_ pour afficher les adresses fournies par Ganache et le nombre placé dans mon smart contract
+ - Ajout de la librairie _web3.js-browser_
+```bash
+ npm install web3.js-browser
+```  
+
+
 # Inspirations
  - [Ben BK](https://www.youtube.com/@BenBK)
  - [Dapp University](https://www.youtube.com/@DappUniversity)
