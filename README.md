@@ -3,6 +3,14 @@ Des tests de Web3.js pour interagir avec une blockchain.
 Dans le cadre de mes tests, [Ganache](https://trufflesuite.com/ganache/) a été utilisé.  
 
 # [What I've Done](https://www.youtube.com/watch?v=8sgycukafqQ)
+
+## Pré-requis
+ - installer [Node.js](https://nodejs.org/en) ;  
+ - installer [Ganache](https://trufflesuite.com/ganache/) pour avoir une blockchain de test en local ;  
+ - un IDE comme [VS Code](https://code.visualstudio.com/) ;  
+
+## Test de Node.js + Web3.js
+
 ```bash
 npm init
 nmp install --save web3
@@ -23,3 +31,6 @@ _Les adresses renseignées sont des adresses fictives issues de [Ganache](https:
 |  _nmp install --save web3_ | installation de la librairie [web3.js](https://web3js.readthedocs.io)  |  
 |  _node_ | lancement de l'invite de commandes interactive pour utiliser l’interpréteur Node sans avoir besoin d'écrire de fichier. Ici, je teste une série de commandes permettant d'utiliser [web3.js](https://web3js.readthedocs.io) dans le but d'interagir avec ma blockchain privée.  |  
   
+# Inspirations
+ - [Ben BK](https://www.youtube.com/@BenBK)
+ - [Dapp University](https://www.youtube.com/@DappUniversity)
