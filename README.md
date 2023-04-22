@@ -28,7 +28,7 @@ _Les adresses renseignées sont des adresses fictives issues de [Ganache](https:
 | Commande  | Description  |  
 |---|---|  
 | _npm init_  | npm est le gestionnaire de paquet de Node, cette commande initialise un répertoire créé sur mon poste et crée le fichier package.json  |  
-|  _nmp install --save web3_ | installation de la librairie [web3.js](https://web3js.readthedocs.io)  |  
+|  _npm install --save web3_ | installation de la librairie [web3.js](https://web3js.readthedocs.io)  |  
 |  _node_ | lancement de l'invite de commandes interactive pour utiliser l’interpréteur Node sans avoir besoin d'écrire de fichier. Ici, je teste une série de commandes permettant d'utiliser [web3.js](https://web3js.readthedocs.io) dans le but d'interagir avec ma blockchain privée.  |  
 
 ## Commandes pour interagir avec un smart contract
