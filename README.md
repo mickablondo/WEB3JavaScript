@@ -38,7 +38,7 @@ Commande pour appeler ma méthode _myNumber()_ de mon contrat _contracts/TestCon
 web3.eth.call({from: '0x842159E7b7a0129bCda9748218fDE06ef94984aF', to: '0x6eb9f6b0eAE64A99879510FdBB3082c30031b5DD', data:web3.utils.sha3('myNumber()').substring(0,10)}).then(console.log);
 ```  
 
-Autre façon de procéder en créant une instance de mon contrat me permettant d'utiliser ses fonctions :  
+Autre façon de procéder en créant une instance de mon contrat depuis son ABI ( [_Application Binary Interface_](https://solidity-fr.readthedocs.io/fr/latest/abi-spec.html) ) me permettant d'utiliser ses fonctions :  
 
 ```javascript
 > let contract = new web3.eth.Contract([
